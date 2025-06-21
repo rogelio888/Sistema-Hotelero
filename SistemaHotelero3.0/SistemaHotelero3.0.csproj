@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1669B534-F358-43D8-B2B9-D2AE4300983C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SistemaHotelero3._0</RootNamespace>
+    <AssemblyName>SistemaHotelero3.0</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>..\packages\BouncyCastle.Cryptography.2.4.0\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.4, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.4\lib\net461\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Administracion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administracion.Designer.cs">
+      <DependentUpon>Administracion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Habitaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Habitaciones.Designer.cs">
+      <DependentUpon>Habitaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Huespedes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Huespedes.Designer.cs">
+      <DependentUpon>Huespedes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inicio.Designer.cs">
+      <DependentUpon>Inicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reporte.Designer.cs">
+      <DependentUpon>Reporte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reservas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reservas.Designer.cs">
+      <DependentUpon>Reservas.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Administracion.resx">
+      <DependentUpon>Administracion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Habitaciones.resx">
+      <DependentUpon>Habitaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Huespedes.resx">
+      <DependentUpon>Huespedes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inicio.resx">
+      <DependentUpon>Inicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Reporte.resx">
+      <DependentUpon>Reporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reservas.resx">
+      <DependentUpon>Reservas.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaDatos\CapaDatos.csproj">
+      <Project>{98fb72f6-8fa7-40e2-a354-ef42dcdd6662}</Project>
+      <Name>CapaDatos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CapaModelo\CapaModelo.csproj">
+      <Project>{72b0f7b1-500d-4ef3-9e44-75f1d2cd4ddc}</Project>
+      <Name>CapaModelo</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3643755-hide-lock-locked-padlock-private_113428.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_person_customer_icon_196942.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cama.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\X.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home_icon-icons.com_73532.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\suitcase-with-white-details_icon-icons.com_73387.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\group-profile-users_icon-icons.com_73540.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar-with-spring-binder-and-date-blocks_icon-icons.com_73645.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cog-wheel-silhouette_icon-icons.com_73617.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\archivo-pdf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ui_user_profile_avatar_person_icon_208734.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
