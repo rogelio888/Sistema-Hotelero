@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Reporte));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.totalreserva = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.labelUsuario = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -56,8 +59,6 @@
             this.label15 = new System.Windows.Forms.Label();
             this.dataGridViewHabitaciones = new System.Windows.Forms.DataGridView();
             this.dataGridViewServicios = new System.Windows.Forms.DataGridView();
-            this.label16 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.idreserva = new System.Windows.Forms.Label();
             this.responsable = new System.Windows.Forms.Label();
             this.huesped = new System.Windows.Forms.Label();
@@ -68,7 +69,6 @@
             this.formapago = new System.Windows.Forms.Label();
             this.estadoreserva = new System.Windows.Forms.Label();
             this.observaciones = new System.Windows.Forms.Label();
-            this.totalreserva = new System.Windows.Forms.Label();
             this.fechareserva = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -88,6 +88,36 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1170, 45);
             this.panel1.TabIndex = 200;
+            // 
+            // totalreserva
+            // 
+            this.totalreserva.AutoSize = true;
+            this.totalreserva.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalreserva.Location = new System.Drawing.Point(588, 16);
+            this.totalreserva.Name = "totalreserva";
+            this.totalreserva.Size = new System.Drawing.Size(59, 20);
+            this.totalreserva.TabIndex = 229;
+            this.totalreserva.Text = "Bs0,00";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(966, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(77, 24);
+            this.button1.TabIndex = 220;
+            this.button1.Text = "Generar PDF";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(467, 16);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(115, 20);
+            this.label16.TabIndex = 219;
+            this.label16.Text = "Total Reserva :";
             // 
             // button5
             // 
@@ -180,6 +210,7 @@
             this.reporteToolStripMenuItem.Name = "reporteToolStripMenuItem";
             this.reporteToolStripMenuItem.Size = new System.Drawing.Size(194, 63);
             this.reporteToolStripMenuItem.Text = "Reporte";
+            this.reporteToolStripMenuItem.Click += new System.EventHandler(this.reporteToolStripMenuItem_Click);
             // 
             // label7
             // 
@@ -357,26 +388,6 @@
             this.dataGridViewServicios.Size = new System.Drawing.Size(630, 145);
             this.dataGridViewServicios.TabIndex = 218;
             // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(467, 16);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(115, 20);
-            this.label16.TabIndex = 219;
-            this.label16.Text = "Total Reserva :";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(966, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(77, 24);
-            this.button1.TabIndex = 220;
-            this.button1.Text = "Generar PDF";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // idreserva
             // 
             this.idreserva.AutoSize = true;
@@ -476,16 +487,6 @@
             this.observaciones.Size = new System.Drawing.Size(35, 20);
             this.observaciones.TabIndex = 228;
             this.observaciones.Text = "Null";
-            // 
-            // totalreserva
-            // 
-            this.totalreserva.AutoSize = true;
-            this.totalreserva.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalreserva.Location = new System.Drawing.Point(588, 16);
-            this.totalreserva.Name = "totalreserva";
-            this.totalreserva.Size = new System.Drawing.Size(35, 20);
-            this.totalreserva.TabIndex = 229;
-            this.totalreserva.Text = "Null";
             // 
             // fechareserva
             // 

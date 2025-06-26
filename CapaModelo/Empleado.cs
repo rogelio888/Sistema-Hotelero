@@ -19,6 +19,7 @@ namespace CapaModelo
         public DateTime fecha_contratacion { get; set; } // Fecha de contratación
         public string rol { get; set; }               // Rol del empleado (de la tabla Roles)
         public string estado_empleado { get; set; }   // Estado del empleado (Activo/Inactivo)
-        public int id_rol { get; set; }               // ID del rol (relacionado con la tabla Roles)
+        public int id_rol { get; set; }                 // ID del rol (relacionado con la tabla Roles)
+        public int EstadoEmpleado { get; set; }         
     }
 }

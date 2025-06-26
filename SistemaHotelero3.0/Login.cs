@@ -22,22 +22,6 @@ namespace SistemaHotelero3._0
             labelMostrarClave.Text = "Mostrar";
         }
 
-        private void labelMostrarClave_Click_1(object sender, EventArgs e)
-        {
-            if (claveVisible)
-            {
-                textBox2.PasswordChar = '*';
-                labelMostrarClave.Text = "Mostrar";
-                claveVisible = false;
-            }
-            else
-            {
-                textBox2.PasswordChar = '\0';
-                labelMostrarClave.Text = "Ocultar";
-                claveVisible = true;
-            }
-
-        }
 
         private void Login_Load(object sender, EventArgs e)
         {
@@ -71,6 +55,22 @@ namespace SistemaHotelero3._0
             {
                 // Si las credenciales son incorrectas
                 MessageBox.Show("Credenciales incorrectas.");
+            }
+        }
+
+        private void labelMostrarClave_Click(object sender, EventArgs e)
+        {
+            if (claveVisible)
+            {
+                textBox2.PasswordChar = '*';
+                labelMostrarClave.Text = "Mostrar";
+                claveVisible = false;
+            }
+            else
+            {
+                textBox2.PasswordChar = '\0';
+                labelMostrarClave.Text = "Ocultar";
+                claveVisible = true;
             }
         }
     }

@@ -149,36 +149,34 @@ namespace CapaDatos
 
         public DataTable ObtenerUltimasReservas()
         {
-            // Crear el DataTable donde se almacenarán los resultados
             DataTable dt = new DataTable();
 
             string query = @"
-            SELECT 
-                R.ReservaID,  -- Agregamos ReservaID
-                H.Nombre AS HuespedNombre, 
-                R.FechaEntrada, 
-                R.EstadoReserva, 
-                D.Total AS MontoTotal
-            FROM 
-                Reserva R
-            JOIN 
-                Huespedes H ON R.HuespedID = H.HuespedID
-            JOIN 
-                DetalleReserva D ON R.ReservaID = D.ReservaID
-            ORDER BY 
-                R.FechaReserva DESC
-            OFFSET 0 ROWS FETCH NEXT 5 ROWS ONLY";
+        SELECT TOP 5
+            R.ReservaID,
+            H.Nombre AS HuespedNombre,
+            R.FechaEntrada,
+            R.EstadoReserva,
+            ISNULL(SUM(D.Total), 0) AS MontoTotal
+        FROM 
+            Reserva R
+        INNER JOIN 
+            Huespedes H ON R.HuespedID = H.HuespedID
+        LEFT JOIN 
+            DetalleReserva D ON R.ReservaID = D.ReservaID
+        GROUP BY
+            R.ReservaID, H.Nombre, R.FechaEntrada, R.EstadoReserva, R.FechaReserva
+        ORDER BY 
+            R.FechaReserva DESC";
 
-            // Ejecutar la consulta y llenar el DataTable
             using (SqlConnection conn = conexion.GetConnection())
             {
                 SqlDataAdapter da = new SqlDataAdapter(query, conn);
                 da.Fill(dt);
             }
 
-            return dt;  // Devolver el DataTable con los resultados
+            return dt;
         }
-
 
         public int GuardarReserva(int huespedID, int empleadoID, DateTime fechaReserva, DateTime fechaEntrada, DateTime fechaSalida, string estadoReserva, string observaciones, int metodoPagoID, int cantidadPersonas)
         {

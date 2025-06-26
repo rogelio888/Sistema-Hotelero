@@ -267,5 +267,40 @@ namespace SistemaHotelero3._0
             }
 
         }
+
+        private void reporteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Crear un formulario simple para pedir el ID de reserva
+            Form prompt = new Form()
+            {
+                Width = 300,
+                Height = 150,
+                FormBorderStyle = FormBorderStyle.FixedDialog,
+                Text = "ID de Reserva",
+                StartPosition = FormStartPosition.CenterScreen
+            };
+            Label textLabel = new Label() { Left = 20, Top = 20, Text = "Ingrese el ID de la reserva:", Width = 240 };
+            TextBox inputBox = new TextBox() { Left = 20, Top = 50, Width = 240 };
+            Button confirmation = new Button() { Text = "OK", Left = 180, Width = 80, Top = 80, DialogResult = DialogResult.OK };
+            prompt.Controls.Add(textLabel);
+            prompt.Controls.Add(inputBox);
+            prompt.Controls.Add(confirmation);
+            prompt.AcceptButton = confirmation;
+
+            if (prompt.ShowDialog() == DialogResult.OK)
+            {
+                int idReserva;
+                if (int.TryParse(inputBox.Text, out idReserva))
+                {
+                    Reporte form = new Reporte(idReserva);
+                    form.Show();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Debe ingresar un ID de reserva válido para generar el reporte.");
+                }
+            }
+        }
     }
 }

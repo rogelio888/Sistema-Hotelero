@@ -196,9 +196,9 @@
             this.label23MontoTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23MontoTotal.Location = new System.Drawing.Point(218, 635);
             this.label23MontoTotal.Name = "label23MontoTotal";
-            this.label23MontoTotal.Size = new System.Drawing.Size(60, 20);
+            this.label23MontoTotal.Size = new System.Drawing.Size(59, 20);
             this.label23MontoTotal.TabIndex = 211;
-            this.label23MontoTotal.Text = "label23";
+            this.label23MontoTotal.Text = "Bs0,00";
             // 
             // label22SubtotalServicios
             // 
@@ -206,9 +206,9 @@
             this.label22SubtotalServicios.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22SubtotalServicios.Location = new System.Drawing.Point(218, 568);
             this.label22SubtotalServicios.Name = "label22SubtotalServicios";
-            this.label22SubtotalServicios.Size = new System.Drawing.Size(60, 20);
+            this.label22SubtotalServicios.Size = new System.Drawing.Size(59, 20);
             this.label22SubtotalServicios.TabIndex = 210;
-            this.label22SubtotalServicios.Text = "label22";
+            this.label22SubtotalServicios.Text = "Bs0,00";
             // 
             // label21SubTotalhabitaciones
             // 
@@ -216,9 +216,9 @@
             this.label21SubTotalhabitaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21SubTotalhabitaciones.Location = new System.Drawing.Point(218, 522);
             this.label21SubTotalhabitaciones.Name = "label21SubTotalhabitaciones";
-            this.label21SubTotalhabitaciones.Size = new System.Drawing.Size(60, 20);
+            this.label21SubTotalhabitaciones.Size = new System.Drawing.Size(59, 20);
             this.label21SubTotalhabitaciones.TabIndex = 209;
-            this.label21SubTotalhabitaciones.Text = "label21";
+            this.label21SubTotalhabitaciones.Text = "Bs0,00";
             // 
             // dataGridView3
             // 
@@ -699,6 +699,7 @@
             // 
             // pictureBox12
             // 
+            this.pictureBox12.Image = global::SistemaHotelero3._0.Properties.Resources.Logo;
             this.pictureBox12.Location = new System.Drawing.Point(466, 396);
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(85, 79);

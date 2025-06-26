@@ -418,6 +418,7 @@
             // 
             // pictureBox12
             // 
+            this.pictureBox12.Image = global::SistemaHotelero3._0.Properties.Resources.Logo;
             this.pictureBox12.Location = new System.Drawing.Point(424, 229);
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(181, 170);
