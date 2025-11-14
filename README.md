@@ -1,135 +1,109 @@
-# Sistema Hotelero 3.0
+# 🏨 Sistema Hotelero 3.0
 
-## Descripción
-**Sistema Hotelero 3.0** es una aplicación de escritorio desarrollada en **C# con Visual Studio**, diseñada para gestionar de manera integral un hotel. Permite manejar huéspedes, reservas, habitaciones, servicios, empleados y pagos de forma centralizada, eficiente y segura.
+**Sistema Hotelero 3.0** es una aplicación de escritorio robusta, desarrollada en **C\# con Visual Studio**, diseñada para la gestión integral de un hotel. Permite una administración centralizada, eficiente y segura de huéspedes, reservas, habitaciones, servicios, empleados y pagos.
 
-El sistema sigue una **arquitectura en tres capas**:
+## ✨ Características Principales
 
-1. **Capa de Datos:** Funciones que interactúan directamente con la base de datos en **SQL Server**.
-2. **Capa Modelo:** Clases que representan las tablas de la base de datos, con propiedades que coinciden exactamente con los campos.
-3. **Capa de Presentación:** Interfaz gráfica para el usuario, con formularios para la gestión de reservas, huéspedes, empleados y generación de reportes.
+| Funcionalidad | Descripción |
+| :--- | :--- |
+| **Gestión de Hoteles** | Registro y edición de la información detallada de hoteles. |
+| **Gestión de Habitaciones** | Control de disponibilidad (Disponible, Ocupada, Mantenimiento), registro de tipos y asociación con reservas/servicios. |
+| **Gestión de Reservas** | Creación, modificación y eliminación de reservas. Control de estado (Pendiente, Confirmada, Cancelada). |
+| **Gestión de Huéspedes** | Registro completo de huéspedes y asociación con sus reservas. |
+| **Gestión de Empleados** | Registro de personal, asignación de roles (**Administrador, Recepcionista, Limpieza**) y gestión de permisos. |
+| **Gestión de Servicios** | Registro de servicios, control de consumos, generación de facturas y pagos. |
+| **Reportes e Informes** | Generación de informes detallados en formato **PDF** (ej. habitaciones disponibles, resumen de reservas, listado de empleados, etc.). |
 
----
+-----
 
-## Funcionalidades
+## 🏗️ Arquitectura del Sistema
 
-### Gestión de Hoteles
-- Registrar nuevos hoteles con información detallada.
-- Visualizar y editar los datos de hoteles existentes.
+El sistema sigue una arquitectura clara y desacoplada de **tres capas**:
 
-### Gestión de Habitaciones
-- Registrar y editar habitaciones y tipos de habitación.
-- Control de disponibilidad: disponible, ocupada o en mantenimiento.
-- Asociar habitaciones con servicios y reservas.
+1.  **Capa de Presentación (UI):**
 
-### Gestión de Reservas
-- Crear, modificar y eliminar reservas.
-- Asignar huéspedes a reservas.
-- Controlar el estado de reservas: pendiente, confirmada o cancelada.
+      * Interfaz gráfica compuesta por formularios y controles para la interacción del usuario (ej. `FormReservas`, `FormHuespedes`).
 
-### Gestión de Huéspedes
-- Registrar y editar huéspedes.
-- Asociar huéspedes con reservas y habitaciones.
+2.  **Capa Modelo (Clases):**
 
-### Gestión de Empleados
-- Registrar empleados y asignar roles: Administrador, Recepcionista o Personal de Limpieza.
-- Gestionar permisos según rol:
-  - **Administrador:** Control total del sistema.
-  - **Recepcionista:** Gestión de reservas y huéspedes.
-  - **Limpieza:** Gestión de habitaciones.
+      * Contiene las clases que representan las entidades de la base de datos (ej. `Empleado`, `Huesped`, `Habitacion`, `Reserva`). Las propiedades de estas clases coinciden exactamente con los campos de la base de datos.
 
-### Gestión de Servicios
-- Registrar servicios ofrecidos por el hotel.
-- Controlar consumos y asignarlos a reservas o habitaciones.
-- Generar facturas y pagos por servicios.
+3.  **Capa de Datos:**
 
-### Reportes e Informes
-- Generación de informes detallados en PDF que incluyen:
-  - Cantidad de hoteles.
-  - Listado de pisos y habitaciones.
-  - Huéspedes registrados.
-  - Habitaciones disponibles y en mantenimiento.
-  - Resumen de reservas realizadas y pendientes.
-  - Informe de empleados y roles.
+      * Funciones encargadas de la comunicación directa con la base de datos **SQL Server**. Implementa las operaciones **CRUD** (*Create, Read, Update, Delete*) mediante la ejecución de consultas SQL.
 
----
+-----
 
-## Base de Datos
+## 💻 Tecnologías Utilizadas
 
-El sistema utiliza **SQL Server** y cuenta con las siguientes tablas:
+  * **Lenguaje:** C\#
+  * **IDE:** Visual Studio Community
+  * **Base de Datos:** SQL Server
+  * **Generación de Reportes:** Librerías compatibles con C\# para generar documentos **PDF**.
+  * **Control de Versiones:** Git / GitHub
 
-- `Hotel`
-- `Habitaciones`
-- `Tipo_de_habitaciones`
-- `Huespedes`
-- `Reservas`
-- `Empleado`
-- `Roles`
-- `Permisos`
-- `Consumos_servicios`
-- `Detalle_de_habitaciones`
-- `Detalle_de_servicios`
-- `Estado_de_la_reserva`
-- `Forma_de_pago`
-- `Horario_empleados`
-- `Servicios`
+-----
 
-Las tablas están relacionadas para garantizar la **integridad referencial** y permitir una gestión coherente de todos los datos del hotel.
+## 💾 Base de Datos (SQL Server)
 
----
+El sistema utiliza **SQL Server** para el almacenamiento de datos. La estructura incluye las siguientes tablas, las cuales mantienen **integridad referencial** para una gestión coherente:
 
-## Arquitectura del Sistema
+| Categoría | Tablas |
+| :--- | :--- |
+| **Estructura Hotel** | `Hotel`, `Habitaciones`, `Tipo_de_habitaciones` |
+| **Gestión de Personas** | `Huespedes`, `Empleado`, `Roles`, `Permisos`, `Horario_empleados` |
+| **Gestión de Reservas** | `Reservas`, `Estado_de_la_reserva`, `Forma_de_pago` |
+| **Gestión de Servicios** | `Servicios`, `Consumos_servicios`, `Detalle_de_habitaciones`, `Detalle_de_servicios` |
 
-```text
-Capa de Presentación (UI) <--> Capa Modelo (Clases) <--> Capa de Datos (SQL Server)
-Capa de Presentación: Formularios y botones que permiten al usuario interactuar con los datos.
+-----
 
-Capa Modelo: Clases como Empleado, Huesped, Habitacion, Reserva, entre otras.
+## 🚀 Instalación y Uso
 
-Capa de Datos: Funciones de CRUD (Create, Read, Update, Delete) que ejecutan consultas SQL.
+Sigue estos pasos para poner en marcha el proyecto:
 
-Tecnologías Utilizadas
-Lenguaje: C#
+1.  **Clonar el repositorio:**
 
-IDE: Visual Studio Community
+    ```bash
+    git clone https://github.com/rogelio888/Sistema-Hotelero.git
+    ```
 
-Base de Datos: SQL Server
+2.  **Abrir el Proyecto:**
 
-Generación de Reportes: PDF mediante librerías compatibles con C#
+      * Abre la solución (`.sln`) dentro de **Visual Studio Community**.
 
-Control de versiones: Git / GitHub
+3.  **Configurar la Base de Datos:**
 
-Instalación y Uso
-Clonar el repositorio:
+      * Configura la cadena de conexión a tu instancia de **SQL Server** en el archivo de configuración (`App.config` o similar) del proyecto para asegurar la comunicación con la base de datos.
 
-bash
-Copiar código
-git clone https://github.com/rogelio888/Sistema-Hotelero.git
-Abrir el proyecto en Visual Studio Community.
+4.  **Ejecutar:**
 
-Configurar la conexión a la base de datos SQL Server en el archivo de configuración.
+      * Ejecuta la aplicación.
+      * Navega por los formularios para comenzar a gestionar hoteles, habitaciones, reservas, huéspedes, empleados y servicios.
 
-Ejecutar la aplicación.
+-----
 
-Navegar por los formularios para gestionar hoteles, habitaciones, reservas, huéspedes, empleados y servicios.
+## 🤝 Contribuciones
 
-Contribuciones
-Si deseas contribuir al proyecto:
+¡Las contribuciones son bienvenidas\! Si deseas mejorar el proyecto, sigue estos pasos:
 
-Hacer un fork del repositorio.
+1.  Haz un **Fork** del repositorio.
+2.  Crea una nueva rama para tu funcionalidad o corrección:
+    ```bash
+    git checkout -b nueva-funcionalidad
+    ```
+3.  Realiza tus cambios y **commits**.
+4.  Envía un **Pull Request** al repositorio principal.
 
-Crear una nueva rama:
+-----
 
-bash
-Copiar código
-git checkout -b nueva-funcionalidad
-Realizar cambios y commits.
+## 📜 Licencia
 
-Enviar un pull request al repositorio principal.
+Este proyecto es de **uso personal y académico**. Eres libre de modificarlo y adaptarlo a tus necesidades, siempre y cuando se mencione al autor original.
 
-Licencia
-Este proyecto es de uso personal y académico. Puedes modificarlo y adaptarlo según tus necesidades, siempre mencionando al autor original.
+-----
 
-Autor
-Rogelio Vladimir Hinojosa Navia
-GitHub: https://github.com/rogelio888
+## 🧑 Autor
+
+**Rogelio Vladimir Hinojosa Navia**
+
+  * **GitHub:** [https://github.com/rogelio888](https://github.com/rogelio888)
